@@ -6,6 +6,8 @@ services:
     environment:
       - SECRET_KEY=mil6-@nsz47(hpv)q_ws4!b4z5digj+orgp9yxhe$$vvp8_ighd
       - DEBUG=1
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51Ix6LdEtVgHckdxlfP2foK2IZUFbgEJBIvIOOldZvpa5VNW7wQbn0mEQFyNU8fvXO5UhiXmmgjDFVViME3mqL5A400OmVotKqC
+      - STRIPE_TEST_SECRET_KEY=sk_test_51Ix6LdEtVgHckdxlzLNYbK9510gbwUaIV8spYonpZR6lImmispVuFtNxr9RuLo2F7YgtOiF79M6GjnxP3c34P7GH00MdcBtVxs
     volumes:
       - .:/code
     ports:
