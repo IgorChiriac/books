@@ -18,8 +18,9 @@ def charge(request):
   permission = Permission.objects.get(codename='read_all_books')
   u = request.user
   u.user_permissions.add(permission)
+  
   if request.method == 'POST':
-    charge = stripe.Charge.create(
+    stripe.Charge.create(
       amount=3900,
       currency='usd',
       description='Purchase all books',
