@@ -8,3 +8,4 @@ django-debug-toolbar==2.0
 whitenoise==4.1.4 # Static Files
 gunicorn==19.9.0 # WSGI (Web Server Gateway Interface)
 dj-database-url==0.5.0 # Database url django utility
+djangorestframework==3.12.4

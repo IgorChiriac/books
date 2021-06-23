@@ -64,6 +64,9 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'books.apps.BooksConfig',
     'orders.apps.OrdersConfig',
+
+    #rest api
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -201,3 +204,11 @@ INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+# Django Rest Framework
+REST_FRAMEWORK = {
+  # Use Django's standard `django.contrib.auth` permissions,
+  # or allow read-only access for unauthenticated users.
+  'DEFAULT_PERMISSION_CLASSES': [],
+  'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
