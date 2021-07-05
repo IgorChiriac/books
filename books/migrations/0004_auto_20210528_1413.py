@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('books', '0003_book_cover'),
+        ("books", "0003_book_cover"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='book',
-            options={'permissions': [('read_all_books', 'Can read all books')]},
+            name="book",
+            options={"permissions": [("read_all_books", "Can read all books")]},
         ),
     ]

@@ -6,12 +6,12 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('books', '0004_auto_20210528_1413'),
+        ("books", "0004_auto_20210528_1413"),
     ]
 
     operations = [
         migrations.AddIndex(
-            model_name='book',
-            index=models.Index(fields=['id'], name='id_index'),
+            model_name="book",
+            index=models.Index(fields=["id"], name="id_index"),
         ),
     ]

@@ -6,7 +6,7 @@
 
 {% block content %}
   {% if not perms.books.read_all_books %}
-    <a href="{% url 'orders' %}" class="btn btn-success" >Purchase All Books</a> 
+    <a href="{% url 'orders' %}" class="btn btn-success" >Purchase All Books</a>
   {% endif %}
   {% for book in book_list %}
     <div>
