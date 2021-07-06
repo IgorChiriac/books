@@ -6,32 +6,43 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %}Bookstore{% endblock title %}</title>
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Find Your New Favourite Book In Our Selection Of Over 20 Million Titles At Bookstore." />
+    <meta name="author" content="Bookstore Gmbh" />
+    <title>{% block title %}Bookstore{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-  <nav>
-    {% if user.is_authenticated %}
-      <a class="p-2 text-dark" href="{% url 'account_logout' %}">Log Out</a>
-    {% else %}
-      <a class="p-2 text-dark" href="{% url 'account_login' %}">Log In</a>
-      <a class="btn btn-outline-primary" href="{% url 'account_signup' %}">Sign Up</a>
-    {% endif %}
-    <a class="p-2 text-dark" href="{% url 'book_list' %}">Books</a>
-    <a class="p-2 text-dark" href="{% url 'about' %}">About</a>
-  </nav>
-  <div class="container">
-    {% block content %}
-    {% endblock content %}
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/">Bookstore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">fasdfasd</a></li>
+                </ul>
+                {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+                {% else %}
+                    <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
+                    <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
 
-  <!-- JavaScript -->
-  {% block javascript %}
-    <script src="{% static 'js/base.js' %}"></script>
-  {% endblock javascript %}
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <!-- JavaScript -->
+    {% block javascript %}
+        <script src="{% static 'js/base.js' %}"></script>
+    {% endblock javascript %}
 </body>
 
 </html>
