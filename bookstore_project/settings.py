@@ -76,6 +76,8 @@ INSTALLED_APPS = [
     "orders.apps.OrdersConfig",
     # rest api
     "rest_framework",
+    # dev extensions
+    "django_extensions",
 ]
 
 MIDDLEWARE = [

@@ -18,7 +18,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
+from rest_framework import routers
 from rest_framework.schemas import get_schema_view
+
+from books.api.viewsets import BookViewSet
+
+router = routers.DefaultRouter()
+router.register(r"books", BookViewSet)
 
 urlpatterns = [
     path("manage-books/", admin.site.urls),
@@ -42,6 +48,8 @@ urlpatterns = [
         ),
         name="swagger-ui",
     ),
+    path("api/", include((router.urls, "bookstore"))),
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
